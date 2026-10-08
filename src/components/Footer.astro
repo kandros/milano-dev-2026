@@ -1,0 +1,26 @@
+---
+const links = [
+  {
+    href: 'https://github.com/kandros/milano.dev-data#how-to-contribute',
+    label: 'segnala evento mancante',
+    external: true,
+  },
+  { href: 'mailto:ciao@milano.dev', label: 'contattaci' },
+];
+---
+
+<footer class="mt-10 mb-5 opacity-40 hover:opacity-100">
+  <div class="flex gap-6">
+    {
+      links.map(({ href, label, external }) => (
+        <a
+          class="cursor-pointer"
+          href={href}
+          {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+        >
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</footer>

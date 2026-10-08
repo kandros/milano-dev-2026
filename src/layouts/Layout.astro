@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
+import Newsletter from '../components/Newsletter.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const siteTitle = 'milano.dev';
+const {
+  title,
+  description = 'La bacheca per i developers a Milano | va a ciapà i bug',
+} = Astro.props;
+const fullTitle = `${title} | ${siteTitle}`;
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@MilanoDev" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="font-sans">
+    <div class="flex">
+      <aside
+        class="min-h-screen max-md:w-2.5 max-md:shrink-0 max-md:bg-accent md:flex-1 md:bg-dark-bg"
+      >
+      </aside>
+      <div class="flex-1 bg-light-bg px-[30px] pt-10 md:pr-0 md:pl-[60px]">
+        <Nav />
+        <Header siteTitle={siteTitle} />
+
+        <main>
+          <slot />
+        </main>
+
+        <div class="mt-20">
+          <div
+            class="relative rounded border-4 border-dark-bg bg-white p-2 md:-left-1/2 md:-ml-[60px]"
+          >
+            <Newsletter />
+          </div>
+        </div>
+
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>

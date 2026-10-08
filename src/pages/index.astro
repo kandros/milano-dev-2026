@@ -1,16 +1,13 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import EventList from '../components/EventList.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <div
+    class="relative rounded border-4 border-dark-bg bg-white p-2 text-center md:-left-1/2 md:-ml-[60px]"
+  >
+    <h2 class="m-0 text-2xl">Prossimi Eventi a Milano</h2>
+  </div>
+  <EventList />
+</Layout>

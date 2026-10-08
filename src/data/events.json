@@ -1,0 +1,66 @@
+[
+  {
+    "meetupName": "Kubernetes & Cloud-Native Milano",
+    "url": "https://www.meetup.com/kubernetes-and-cloud-native-milano/",
+    "date": "2026-10-14T18:30:00+02:00",
+    "title": "Platform engineering in pratica: Backstage, Crossplane e Argo CD",
+    "venue": "Amazon Italy"
+  },
+  {
+    "meetupName": "JUG Milano",
+    "url": "https://www.jugmilano.it/",
+    "date": "2026-10-16T18:30:00+02:00",
+    "title": "Virtual threads in produzione: due anni dopo",
+    "venue": "eDreams ODIGEO Tech Hub"
+  },
+  {
+    "meetupName": "Fablab Wemake",
+    "url": "https://www.wemake.cc/",
+    "date": "2026-10-20T09:30:00+02:00",
+    "dateTo": "2026-10-23T18:00:00+02:00",
+    "title": "Workshop: \"IOT: oggetti programmabili e connessi\"",
+    "venue": "Fablab Wemake"
+  },
+  {
+    "meetupName": "Golang Milano",
+    "url": "https://www.meetup.com/golang-milano/",
+    "date": "2026-10-22T19:00:00+02:00",
+    "title": "Battle of the meetups! Go vs Rust - WebAssembly lato server",
+    "venue": "Prima Assicurazioni"
+  },
+  {
+    "meetupName": "Avanscoperta (Meetups & Workshops)",
+    "url": "https://www.avanscoperta.it/",
+    "date": "2026-10-28T18:00:00+01:00",
+    "title": "Software Crafting Programme - Small Talk",
+    "venue": ""
+  },
+  {
+    "meetupName": "Papers We Love Milano",
+    "url": "https://paperswelove.org/chapter/milan/",
+    "date": "2026-11-05T18:30:00+01:00",
+    "title": "Attention Is All You Need, letto con calma",
+    "venue": "eDreams ODIGEO Tech Hub"
+  },
+  {
+    "meetupName": "Elixir Language Milano",
+    "url": "https://www.meetup.com/elixir-language-milano/",
+    "date": "2026-11-11T19:00:00+01:00",
+    "title": "LiveView senza paura: real-time UI in 300 righe",
+    "venue": "Prima Assicurazioni"
+  },
+  {
+    "meetupName": "#pugMi: PHP User Group Milano",
+    "url": "https://www.meetup.com/milanophp/",
+    "date": "2026-11-19T19:00:00+01:00",
+    "title": "Acceptance test & Raccolta dei requisiti",
+    "venue": "C30 - OneDay Group"
+  },
+  {
+    "meetupName": "Milano JS",
+    "url": "https://milanojs.com/",
+    "date": "2026-12-03T19:00:00+01:00",
+    "title": "Signals ovunque: lo stato dell'arte della reattività nel browser",
+    "venue": "Talent Garden Calabiana"
+  }
+]

@@ -1,0 +1,71 @@
+---
+import events from '../data/events.json';
+
+type Event = {
+  meetupName: string;
+  url: string;
+  date: string;
+  dateTo?: string;
+  title: string;
+  venue: string;
+};
+
+const now = Date.now();
+const upcoming = (events as Event[])
+  .filter((e) => new Date(e.dateTo ?? e.date).getTime() >= now)
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+const formatter = new Intl.DateTimeFormat('it-IT', {
+  weekday: 'short',
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'Europe/Rome',
+});
+---
+
+<div>
+  {
+    upcoming.map((e) => (
+      <div class="relative my-20 md:my-28">
+        <aside class="md:absolute md:left-[-560px] md:w-[420px] md:text-right md:text-light-text">
+          <h4 class="m-0 text-base">
+            {e.dateTo && <small class="text-[80%]">da </small>}
+            <time datetime={e.date}>{formatter.format(new Date(e.date))}</time>
+            {e.dateTo && (
+              <div class="mt-1">
+                <small class="text-[80%]">a </small>
+                <time datetime={e.dateTo}>{formatter.format(new Date(e.dateTo))}</time>
+              </div>
+            )}
+          </h4>
+          <div class="font-light">{e.venue}</div>
+        </aside>
+
+        <div class="w-full max-w-[420px]">
+          <h3 class="m-0 text-2xl leading-[1.1] font-black">
+            <a class="text-inherit" rel="noopener noreferrer" target="_blank" href={e.url}>
+              {e.title}
+            </a>
+          </h3>
+          <div class="font-light">{e.meetupName}</div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  // Relative labels depend on the viewer's "today", so add them client-side.
+  const dayKey = (d: Date) => d.toDateString();
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
+
+  for (const el of document.querySelectorAll<HTMLTimeElement>('time[datetime]')) {
+    const key = dayKey(new Date(el.dateTime));
+    const label =
+      key === dayKey(today) ? ' (oggi)' : key === dayKey(tomorrow) ? ' (domani)' : '';
+    if (label) el.append(label);
+  }
+</script>

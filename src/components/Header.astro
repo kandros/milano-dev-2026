@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+interface Props {
+  siteTitle: string;
+}
+
+const { siteTitle } = Astro.props;
+---
+
+<header class="mb-8 flex items-center">
+  <div class="-ml-[270px] shrink-0">
+    <Image src={logo} width={140} height={140} alt="" class="rounded" />
+  </div>
+  <div class="py-[1.45rem] pr-[1.0875rem] pl-[135px]">
+    <h1 class="m-0 inline-block border-b-[3px] border-accent">
+      <a href="/" class="text-inherit no-underline">{siteTitle}</a>
+    </h1>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+---
+import TwitterLink from './TwitterLink.astro';
+
+const links = [
+  { href: '/', label: 'eventi' },
+  { href: '/about', label: 'about' },
+  { href: '/newsletter', label: 'newsletter' },
+];
+---
+
+<nav
+  class="flex text-base max-md:fixed max-md:top-0 max-md:left-0 max-md:z-10 max-md:w-full max-md:overflow-x-auto max-md:bg-dark-bg max-md:text-white max-md:shadow-[0_1px_5px_1px_rgba(0,0,0,0.12)] md:max-w-[620px] md:justify-end md:opacity-40 md:hover:opacity-100"
+>
+  <div class="max-md:flex-1 max-md:text-center md:ml-[18px]">
+    <TwitterLink />
+  </div>
+  {
+    links.map(({ href, label }) => (
+      <div class="max-md:flex-1 max-md:text-center md:ml-[18px]">
+        <a href={href} class="max-md:block max-md:p-3.5 max-md:whitespace-nowrap">
+          {label}
+        </a>
+      </div>
+    ))
+  }
+</nav>
